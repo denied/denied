@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+  <ul>
+  {% for note in notes %}
+    <li><u>{{ note.title }}</u>:<br />
+        {{ note.text }}</li>
+  {% endfor %}
+  </ul>
+  <h2>Leave a Note</h2>
+  <form method="post" action="/create">
+    <p>Title:<br />
+       <input type="text" name="title" size="30" /></p>
+    <p>Text:<br />
+       <textarea name="text" rows="5" cols="40"></textarea></p>
+    <p><input type="submit" value="Add comment" /></p>
+  </form>
+{% endblock %}
